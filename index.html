@@ -3,17 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pi Memory Checker</title>
-  <style>
-    body { font-family: sans-serif; background-color: #e8f5e9; color: #2e7d32; padding: 20px; }
-    .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    h1 { text-align: center; color: #1b5e20; }
-  </style>
+  <title>円周率記憶確認アプリ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Pi Memory Checker</h1>
-    <p>このページはアプリのトップページです。全機能のコードは別ファイルで構成されています。</p>
+    <h1>円周率記憶確認アプリ</h1>
+    <div id="start-screen">
+      <h2>範囲を選択してください</h2>
+      <select id="range-select">
+        <option value="1-100">1〜100桁</option>
+        <option value="101-200">101〜200桁</option>
+        <option value="201-300">201〜300桁</option>
+        <option value="301-400">301〜400桁</option>
+        <option value="401-500">401〜500桁</option>
+        <option value="501-600">501〜600桁</option>
+        <option value="601-700">601〜700桁</option>
+        <option value="701-800">701〜800桁</option>
+        <option value="801-900">801〜900桁</option>
+        <option value="901-1000">901〜1000桁</option>
+        <option value="1-500">1〜500桁</option>
+        <option value="501-1000">501〜1000桁</option>
+        <option value="1001-1100">1001〜1100桁</option>
+        <option value="1101-1200">1101〜1200桁</option>
+        <option value="1201-1300">1201〜1300桁</option>
+        <option value="1301-1400">1301〜1400桁</option>
+        <option value="1401-1500">1401〜1500桁</option>
+        <option value="1501-1600">1501〜1600桁</option>
+        <option value="1601-1700">1601〜1700桁</option>
+        <option value="1701-1800">1701〜1800桁</option>
+        <option value="1801-1900">1801〜1900桁</option>
+        <option value="1901-2000">1901〜2000桁</option>
+        <option value="1001-1500">1001〜1500桁</option>
+        <option value="1501-2000">1501〜2000桁</option>
+      </select>
+      <button id="start-button">スタート</button>
+    </div>
+    <div id="input-screen" class="hidden">
+      <h2>数字を入力してください</h2>
+      <textarea id="user-input" rows="5" placeholder="ここに数字を入力"></textarea>
+      <div>
+        <button id="submit-button">ストップ</button>
+      </div>
+      <p>タイマー: <span id="timer">0.0</span> 秒</p>
+    </div>
+    <div id="result-screen" class="hidden">
+      <h2>結果</h2>
+      <div id="result-display"></div>
+      <button id="show-history">履歴を見る</button>
+    </div>
+    <div id="history-screen" class="hidden">
+      <h2>履歴</h2>
+      <ul id="history-list"></ul>
+    </div>
+    <div id="full-pi-screen" class="hidden">
+      <h2>円周率（2000桁）</h2>
+      <pre id="full-pi"></pre>
+    </div>
   </div>
+  <script src="pi-digits.js"></script>
+  <script src="history.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
